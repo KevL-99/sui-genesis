@@ -1,0 +1,47 @@
+---
+protocol-key-pair:
+  path: /home/user/kehliu-cs496/sui-genesis/4_validator/key-pairs/n1_protocol.key
+worker-key-pair:
+  path: /home/user/kehliu-cs496/sui-genesis/4_validator/key-pairs/n1_worker.key
+network-key-pair:
+  path: /home/user/kehliu-cs496/sui-genesis/4_validator/key-pairs/n1_network.key
+account-key-pair:
+  path: /home/user/kehliu-cs496/sui-genesis/4_validator/key-pairs/n1_account.key
+# Update this value to the location you want Sui to store its database
+db-path: " /home/user/kehliu-cs496/sui-genesis/4_validator/db/n1/"
+
+network-address: "/ip4/127.0.0.1/tcp/8880/http"
+metrics-address: "127.0.0.1:9187"
+# this address is also used for web socket connections
+json-rpc-address: "0.0.0.0:9001"
+enable-event-processing: true
+admin-interface-port: 1351
+
+genesis:
+  # Update this to the location of where the genesis file is stored
+  genesis-file-location: "/home/user/kehliu-cs496/sui-genesis/4_validator/genesis.blob"
+
+authority-store-pruning-config:
+  num-latest-epoch-dbs-to-retain: 3
+  epoch-db-pruning-period-secs: 3600
+  num-epochs-to-retain: 1
+  max-checkpoints-in-batch: 10
+  max-transactions-in-batch: 1000
+  pruning-run-delay-seconds: 60
+
+p2p-config:
+  listen-address: "127.0.0.1:8884"
+  external-address: /ip4/127.0.0.1/udp/8884
+  seed-peers:
+    - peer-id: fd2ad62d28ec130a7ed577f10a973db87f0eb8cf423fec739021dd3d44475880 
+      address: /ip4/127.0.0.1/udp/8094
+    - peer-id: 748e7dcd51dac24385246f465db03f45a0a2e3c141fb674acdb9c7f0fdec9c8a 
+      address: /ip4/127.0.0.1/udp/9084
+    - peer-id: 9f9039f776d020f321b0199a678012e1e1b8f4459e968ef2a87b8a7fccff822d
+      address: /ip4/127.0.0.1/udp/9094
+    - peer-id: a067b665f828d958a90245ae23d164cec2afe1b5152f6f5a0014fd8afc80cdbb 
+      address: /ip4/127.0.0.1/udp/9584
+    - peer-id: 5516a701da3930f53640995ab400772cd34ab6108032e38330d33557a7e460cb
+      address: /ip4/127.0.0.1/udp/8084
+    - peer-id: 820e65c926b01b59166359140425ba85945ed646937fe62d6785a4c9cbb40e8c
+      address: /ip4/127.0.0.1/udp/8894
